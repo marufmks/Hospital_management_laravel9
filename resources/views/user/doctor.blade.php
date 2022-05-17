@@ -3,9 +3,10 @@
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
       <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+        
+        @if (isset($doctor))    
         @foreach ($doctor as $doctors)
             
-        
         <div class="item">
           <div class="card-doctor">
             <div class="header">
@@ -22,7 +23,7 @@
           </div>
         </div>
         @endforeach
-        
+        @endif
       </div>
     </div>
   </div>

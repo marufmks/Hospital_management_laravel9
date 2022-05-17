@@ -34,7 +34,8 @@ class HomeController extends Controller
     }
 
     public function doctors(){
-        return view('user.doctors');
+        $doctor=doctor::paginate(3);
+        return view('user.doctors',compact('doctor'));
     }
     public function news(){
         return view('user.news');
@@ -46,7 +47,8 @@ class HomeController extends Controller
         return view('user.contact');
     }
     public function about(){
-        return view('user.about');
+        $doctor=doctor::paginate(3);
+        return view('user.about',compact('doctor'));
     }
 
     public function appointment(Request $request){
