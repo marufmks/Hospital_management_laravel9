@@ -17,20 +17,20 @@
 
       <div class="collapse navbar-collapse" id="navbarSupport">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+          <li class="nav-item {{Request::routeIs('home')? 'active':''}}">
+            <a class="nav-link" href="{{route('home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link {{Request::routeIs('about')? 'active':''}}" href="{{route('home')}}">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Doctors</a>
+            <a class="nav-link {{Request::routeIs('doctors')? 'active':''}}" href="{{route('doctors')}}">Doctors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
+            <a class="nav-link {{Request::routeIs('news')? 'active':''}}" href="{{route('news')}}">News</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link {{Request::routeIs('contact')? 'active':''}}" href="{{route('contact')}}">Contact</a>
           </li>
           @if (Route::has('login'))
           @auth

@@ -24,13 +24,29 @@ class HomeController extends Controller
            return redirect()->back();
        }
     }
-    public function index(){
+    public function home(){
         if(Auth::id()){
             return redirect('home');
         }else{
         $doctor=doctor::all();
         return view('user.home',compact('doctor'));
     }
+    }
+
+    public function doctors(){
+        return view('user.doctors');
+    }
+    public function news(){
+        return view('user.news');
+    }
+    public function details(){
+        return view('user.news_details');
+    }
+    public function contact(){
+        return view('user.contact');
+    }
+    public function about(){
+        return view('user.about');
     }
 
     public function appointment(Request $request){

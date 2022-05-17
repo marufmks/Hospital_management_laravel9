@@ -15,7 +15,13 @@ use App\Http\Controllers\AdminController;
 */
 
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'home'])->name('home');
+Route::get('doctors',[HomeController::class,'doctors'])->name('doctors');
+Route::get('news',[HomeController::class,'news'])->name('news');
+Route::get('news/details',[HomeController::class,'details'])->name('details');
+Route::get('contact',[HomeController::class,'contact'])->name('contact');
+Route::get('about',[HomeController::class,'about'])->name('about');
+
 
 
 
