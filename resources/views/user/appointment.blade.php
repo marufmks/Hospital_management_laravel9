@@ -4,6 +4,7 @@
 
       <form class="main-form" action="{{url('appointment')}} " method="POST">
         @csrf
+        
         <div class="row mt-5 ">
           <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
             <input type="text" name="name" class="form-control" placeholder="Full name">

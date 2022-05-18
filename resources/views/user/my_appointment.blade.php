@@ -67,27 +67,26 @@
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link {{Request::routeIs('home')? 'active':''}}" href="{{route('home')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link {{Request::routeIs('about')? 'active':''}}" href="{{route('about')}}">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
+              <a class="nav-link {{Request::routeIs('doctors')? 'active':''}}" href="{{route('doctors')}}">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link {{Request::routeIs('news')? 'active':''}}" href="{{route('news')}}">News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link {{Request::routeIs('contact')? 'active':''}}" href="{{route('contact')}}">Contact</a>
             </li>
             @if (Route::has('login'))
             @auth
 
             <li class="nav-item">
-              <a class="nav-link" style="background-color:greenyellow; color:white;"
-               href="{{url('myappointment')}}">My Appointment</a>
+              <a class="nav-link {{Request::routeIs('myappointment')? 'active':''}}" href="{{route('myappointment')}}">My Appointment</a>
             </li>
             <x-app-layout>
             </x-app-layout>  

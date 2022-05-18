@@ -17,8 +17,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupport">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item {{Request::routeIs('home')? 'active':''}}">
-            <a class="nav-link" href="{{route('home')}}">Home</a>
+          <li class="nav-item">
+            <a class="nav-link {{Request::routeIs('home')? 'active':''}}" href="{{route('home')}}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{Request::routeIs('about')? 'active':''}}" href="{{route('about')}}">About Us</a>
@@ -36,7 +36,7 @@
           @auth
 
           <li class="nav-item">
-            <a class="nav-link" style="background-color:greenyellow; color:white;" href="{{url('myappointment')}}">My Appointment</a>
+            <a class="nav-link {{Request::routeIs('myappointment')? 'active':''}}" href="{{route('myappointment')}}">My Appointment</a>
           </li>
           <x-app-layout>
           </x-app-layout>  

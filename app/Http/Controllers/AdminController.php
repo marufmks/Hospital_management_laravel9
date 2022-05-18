@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Contactform;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Notifications\MyFirstNotification;
@@ -34,6 +35,10 @@ class AdminController extends Controller
         $data=appointment::all();
         return  view('admin.showappointment',compact('data'));
     }
+    public function showmessage(){
+        $data=contactform::all();
+        return  view('admin.showmessage',compact('data'));
+    }
 
     public function approved($id){
         $data=appointment::find($id);
@@ -54,9 +59,15 @@ class AdminController extends Controller
         $data=doctor::all();
         return view('admin.showdoctor',compact('data'));
     }
+    
 
     public function deleteddoctor($id){
         $data=doctor::find($id);
+        $data->delete();
+        return redirect()->back();
+    }
+    public function deletemail($id){
+        $data=contactform::find($id);
         $data->delete();
         return redirect()->back();
     }

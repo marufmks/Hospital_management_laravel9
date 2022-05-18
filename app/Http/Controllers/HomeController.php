@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\Contactform;
 
 class HomeController extends Controller
 {
@@ -66,6 +67,19 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->back()->with('message','Appointment Request Successfull.We will contact you soon');
+    }
+    public function contactform(Request $request){
+        $data=new contactform;
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->subject=$request->subject;
+        $data->message=$request->message;
+        if(Auth::id()){
+            $data->user_id=Auth::user()->id;
+        }
+        $data->save();
+
+        return redirect()->back()->with('message','Email sent Successfull.We will contact you soon');
     }
 
     public function myappointment(){
